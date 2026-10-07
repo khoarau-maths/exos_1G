@@ -1,0 +1,293 @@
+<title>Exercices similaires 1G</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400&family=Source+Sans+3:wght@500;600&display=swap">
+<style>
+/* Mise en page : une page = un exercice (comme les cadres des fiches), numéros en haut pour passer de l'un à l'autre. */
+:root{
+  --bg:#ffffff; --fg:#1c1e21; --muted:#5d6269; --box:#e6e8ea; --line:#b9bec4; --pastille:#4a4e54; --pastille-fg:#ffffff;
+  --fig:#0b7b7b; --fig-soft:#bcdcdc; --grid:#cfe3ef; --hl:#fff3c4; --focus:#0b5cad;
+  --serif:'Source Serif 4',Georgia,'Times New Roman',serif; --sans:'Source Sans 3',system-ui,-apple-system,'Segoe UI',sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#16181b; --fg:#e8eaec; --muted:#a2a8af; --box:#25282c; --line:#4a4f56; --pastille:#d5d8db; --pastille-fg:#16181b;
+    --fig:#4fc3c3; --fig-soft:#1f4a4a; --grid:#2b3b46; --hl:#4a4224; --focus:#7db5f0; color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#16181b; --fg:#e8eaec; --muted:#a2a8af; --box:#25282c; --line:#4a4f56; --pastille:#d5d8db; --pastille-fg:#16181b;
+  --fig:#4fc3c3; --fig-soft:#1f4a4a; --grid:#2b3b46; --hl:#4a4224; --focus:#7db5f0; color-scheme:dark;
+}
+body{background:var(--bg);color:var(--fg);font-family:var(--serif);font-size:17px;line-height:1.55;margin:0;padding-inline:16px}
+.wrap{max-width:46rem;margin-inline:auto;padding-block:20px 56px}
+header.top{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:baseline;gap:4px 16px;border-bottom:1.5px solid var(--fg);padding-bottom:8px}
+header.top h1{font-size:1.15rem;font-variant-caps:all-small-caps;letter-spacing:.06em;font-weight:700;margin:0}
+header.top .niv{font-variant-caps:all-small-caps;letter-spacing:.06em;font-weight:600;color:var(--muted)}
+nav.parts{display:grid;gap:8px;margin-block:14px 6px}
+.part{display:flex;flex-wrap:wrap;align-items:center;gap:6px}
+.part .lab{font-family:var(--sans);font-weight:600;font-size:.85rem;min-width:9.5rem;color:var(--muted)}
+.part .lab b{display:inline-block;background:var(--pastille);color:var(--pastille-fg);border-radius:3px;padding:0 6px;margin-right:6px}
+.num{font-family:var(--sans);font-weight:600;font-size:.95rem;min-width:2.2rem;height:2.2rem;display:inline-flex;align-items:center;justify-content:center;border:1px solid var(--line);border-radius:4px;background:transparent;color:var(--fg);cursor:pointer;padding:0}
+.num:hover{background:var(--box)}
+.num[aria-current="true"]{background:var(--pastille);color:var(--pastille-fg);border-color:var(--pastille)}
+.num:focus-visible,summary:focus-visible,.step:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.exo{position:relative;border:1.2px solid var(--fg);border-radius:12px;padding:26px 20px 18px;margin-top:30px}
+.exo > .ttl{position:absolute;top:-.9em;left:18px;background:var(--bg);padding:0 8px;font-weight:700}
+.exo .ttl small{font-weight:400;color:var(--muted);margin-left:8px;font-style:italic}
+.exo h2{margin:0 0 8px;font-size:1.05rem}
+.exo ol,.exo ul{margin:6px 0;padding-left:1.5rem}
+.exo li{margin-block:4px}
+.fig{display:block;max-width:100%;height:auto;margin:10px auto}
+.fig text{font-family:var(--serif);font-size:13px;fill:var(--fg)}
+.fig .gr{stroke:var(--grid);stroke-width:1}
+.fig .ax{stroke:var(--fg);stroke-width:1.1}
+.fig .cv{stroke:var(--fig);stroke-width:2.2;fill:none}
+.fig .sg{stroke:var(--fig);stroke-width:2;fill:none}
+.fig .ds{stroke:var(--fig);stroke-width:1.5;fill:none;stroke-dasharray:5 4}
+.fig .pt{fill:var(--fig)}
+.fig .ra{stroke:var(--fg);stroke-width:1;fill:none}
+.fig .lb{fill:var(--fig);font-style:italic}
+details{margin-top:16px;border-top:1px dashed var(--line);padding-top:12px}
+summary{cursor:pointer;font-family:var(--sans);font-weight:600;font-size:.95rem;list-style:none;display:inline-flex;align-items:center;gap:8px;padding:6px 12px;border:1px solid var(--fg);border-radius:4px}
+summary::-webkit-details-marker{display:none}
+summary::before{content:"▸";font-size:.9em}
+details[open] > summary::before{content:"▾"}
+.corr{margin-top:12px;background:var(--box);border-radius:10px;padding:14px 16px 10px}
+.corr h3{font-size:.8rem;font-family:var(--sans);font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);margin:10px 0 2px}
+.corr p{margin:6px 0}
+.rep{display:inline-block;background:var(--hl);padding:0 6px;border-radius:3px}
+.tbl{overflow-x:auto;margin:10px 0}
+table.sg{border-collapse:collapse;margin-inline:auto;font-size:.95rem;border:1.5px solid var(--fg)}
+table.sg td,table.sg th{padding:5px 6px;text-align:center;font-weight:400;border-top:1.5px solid var(--fg);border-bottom:1.5px solid var(--fg)}
+table.sg th{border-right:1.5px solid var(--fg);padding:5px 12px;white-space:nowrap;font-weight:400}
+table.sg td.iv{min-width:3.2rem}
+table.sg td.pt{position:relative;min-width:2.6rem}
+table.sg td.pt::before{content:"";position:absolute;left:50%;top:0;bottom:0;border-left:1.5px solid var(--fg);transform:translateX(-50%)}
+table.sg tr.hd td.pt::before{display:none}
+table.sg td.pt.dbl::before{border-left:4px double var(--fg)}
+table.sg td.pt span{position:relative;background:var(--bg);padding:0 2px}
+table.sg td.pt.dbl span{display:none}
+table.sg.var td{border:1px solid var(--fg)}
+.vt{display:grid;grid-template-columns:auto minmax(15rem,22rem);border:1.5px solid var(--fg);border-radius:6px;margin-inline:auto;width:max-content;max-width:100%}
+.vt .vh{padding:8px 14px;display:flex;align-items:center;justify-content:center;border-right:1.5px solid var(--fg);border-bottom:1.5px solid var(--fg)}
+.vt .vh.vl{border-bottom:0}
+.vt .vz{position:relative}.vt .vzh{height:2.6rem;border-bottom:1.5px solid var(--fg)}.vt .vzf{height:6.2rem}
+.vt .vzh .vv{top:50%}.vt .vv{position:absolute;padding:0 8px;white-space:nowrap}
+.vt svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible;color:var(--fg)}
+.vt line{stroke:var(--fg);stroke-width:1.4}
+.step{display:flex;justify-content:space-between;gap:12px;margin-top:26px;font-family:var(--sans)}
+.step button{font:inherit;font-weight:600;background:transparent;color:var(--fg);border:1px solid var(--line);border-radius:4px;padding:8px 14px;cursor:pointer}
+.step button:hover{background:var(--box)}
+.step button[disabled]{opacity:.35;cursor:default}
+.intro{color:var(--muted);font-size:.95rem;margin:10px 0 0}
+mjx-container{font-size:100%!important}
+@media (max-width:520px){ body{font-size:16px} .exo{padding:24px 14px 14px} .part .lab{min-width:100%} }
+@media (prefers-reduced-motion:reduce){*{scroll-behavior:auto!important}}
+</style>
+
+<div class="wrap">
+  <header class="top">
+    <h1>Exercices similaires</h1>
+    <span class="niv">1G Spé maths · Devoir de vacances</span>
+  </header>
+  <p class="intro">Chaque exercice du devoir a ici un exercice du même type, avec une correction détaillée. Cherche d'abord, puis ouvre la correction.</p>
+  <nav class="parts" id="nav" aria-label="Choisir un exercice"></nav>
+  <main id="main"></main>
+</div>
+
+<script>
+window.MathJax={tex:{inlineMath:[['\\(','\\)']],displayMath:[['\\[','\\]']]},svg:{fontCache:'global'},options:{enableMenu:false}};
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/3.2.2/es5/tex-svg.min.js" async></script>
+<script>
+const R=String.raw;
+
+/* ---------- figures ---------- */
+function plot(o){
+  const u=o.u||30,pad=24,W=(o.x1-o.x0)*u+2*pad,H=(o.y1-o.y0)*u+2*pad;
+  const X=x=>pad+(x-o.x0)*u,Y=y=>pad+(o.y1-y)*u;
+  let s=`<svg class="fig" viewBox="0 0 ${W} ${H}" width="${W}" role="img" aria-label="${o.alt||'repère'}">`;
+  s+=`<defs><clipPath id="${o.id}"><rect x="${pad}" y="${pad}" width="${W-2*pad}" height="${H-2*pad}"/></clipPath></defs>`;
+  for(let i=Math.ceil(o.x0);i<=o.x1;i++)s+=`<line class="gr" x1="${X(i)}" y1="${pad}" x2="${X(i)}" y2="${H-pad}"/>`;
+  for(let j=Math.ceil(o.y0);j<=o.y1;j++)s+=`<line class="gr" x1="${pad}" y1="${Y(j)}" x2="${W-pad}" y2="${Y(j)}"/>`;
+  s+=`<line class="ax" x1="${pad-6}" y1="${Y(0)}" x2="${W-pad+8}" y2="${Y(0)}"/><line class="ax" x1="${X(0)}" y1="${pad-8}" x2="${X(0)}" y2="${H-pad+6}"/>`;
+  for(let i=Math.ceil(o.x0);i<=o.x1;i++)if(i!==0)s+=`<text x="${X(i)}" y="${Y(0)+15}" text-anchor="middle" style="font-size:11px">${i<0?'−'+(-i):i}</text>`;
+  for(let j=Math.ceil(o.y0);j<=o.y1;j++)if(j!==0)s+=`<text x="${X(0)-5}" y="${Y(j)+4}" text-anchor="end" style="font-size:11px">${j<0?'−'+(-j):j}</text>`;
+  s+=`<text x="${X(0)-5}" y="${Y(0)+14}" text-anchor="end" style="font-size:11px">0</text>`;
+  s+=`<g clip-path="url(#${o.id})">`;
+  if(o.curve){let d='';for(let k=0;k<=160;k++){const x=o.cx0+(o.cx1-o.cx0)*k/160;d+=(k?'L':'M')+X(x).toFixed(1)+' '+Y(o.curve(x)).toFixed(1)}s+=`<path class="cv" d="${d}"/>`}
+  if(o.line){const y=x=>o.line[0]*x+o.line[1];s+=`<line class="cv" x1="${X(o.x0)}" y1="${Y(y(o.x0))}" x2="${X(o.x1)}" y2="${Y(y(o.x1))}"/>`}
+  if(o.hline!==undefined)s+=`<line class="ds" x1="${pad}" y1="${Y(o.hline)}" x2="${W-pad}" y2="${Y(o.hline)}"/>`;
+  s+='</g>';
+  (o.pts||[]).forEach(p=>{s+=`<circle class="pt" cx="${X(p[0])}" cy="${Y(p[1])}" r="3.4"/>`;if(p[2])s+=`<text class="lb" x="${X(p[0])+(p[3]||6)}" y="${Y(p[1])+(p[4]||-6)}">${p[2]}</text>`});
+  if(o.lab)s+=`<text class="lb" x="${X(o.lab[0])}" y="${Y(o.lab[1])}">${o.lab[2]}</text>`;
+  return s+'</svg>';
+}
+function geo(o){
+  const s=o.s||40,pad=28,P=o.pts,names=Object.keys(P);
+  const xs=names.map(n=>P[n][0]),ys=names.map(n=>P[n][1]);
+  const minx=Math.min(...xs),maxx=Math.max(...xs),miny=Math.min(...ys),maxy=Math.max(...ys);
+  const W=(maxx-minx)*s+2*pad,H=(maxy-miny)*s+2*pad;
+  const X=x=>pad+(x-minx)*s,Y=y=>pad+(maxy-y)*s;
+  let t=`<svg class="fig" viewBox="0 0 ${W} ${H}" width="${W}" role="img" aria-label="${o.alt||'figure'}">`;
+  (o.segs||[]).forEach(g=>{t+=`<line class="${g[2]==='d'?'ds':'sg'}" x1="${X(P[g[0]][0])}" y1="${Y(P[g[0]][1])}" x2="${X(P[g[1]][0])}" y2="${Y(P[g[1]][1])}"/>`});
+  (o.ra||[]).forEach(r=>{const v=P[r[0]],a=P[r[1]],b=P[r[2]];const l=(p,q)=>{const dx=q[0]-p[0],dy=q[1]-p[1],n=Math.hypot(dx,dy);return[dx/n,dy/n]};const u1=l(v,a),u2=l(v,b),k=.2;
+    const p1=[v[0]+u1[0]*k,v[1]+u1[1]*k],p2=[p1[0]+u2[0]*k,p1[1]+u2[1]*k],p3=[v[0]+u2[0]*k,v[1]+u2[1]*k];
+    t+=`<polyline class="ra" points="${X(p1[0])},${Y(p1[1])} ${X(p2[0])},${Y(p2[1])} ${X(p3[0])},${Y(p3[1])}"/>`});
+  names.forEach(n=>{const p=P[n];if(!p[4])t+=`<circle class="pt" cx="${X(p[0])}" cy="${Y(p[1])}" r="2.6"/>`;t+=`<text x="${X(p[0])+(p[2]||0)}" y="${Y(p[1])+(p[3]||0)}" text-anchor="middle" style="font-style:italic">${n}</text>`});
+  (o.tx||[]).forEach(a=>{t+=`<text x="${X(a[0])}" y="${Y(a[1])}" text-anchor="middle" style="font-size:12px">${a[2]}</text>`});
+  return t+'</svg>';
+}
+function sign(points,rows){
+  const n=points.length,cols=2*n+1;
+  let h='<div class="tbl"><table class="sg"><tr class="hd"><th>\\(x\\)</th>';
+  for(let c=0;c<cols;c++){const pt=c%2===1;h+='<td class="'+(pt?'pt':'iv')+'"><span>'+(c===0?'\\(-\\infty\\)':c===cols-1?'\\(+\\infty\\)':pt?'\\('+points[(c-1)/2]+'\\)':'')+'</span></td>'}
+  h+='</tr>';
+  rows.forEach(r=>{h+='<tr><th>'+r[0]+'</th>'+r[1].map((c,i)=>{const pt=i%2===1;const d=c==='‖';return '<td class="'+(pt?'pt':'iv')+(d?' dbl':'')+'"><span>'+(d?'':c)+'</span></td>'}).join('')+'</tr>'});
+  return h+'</table></div>';
+}
+function vtable(xs,ys,hi){
+  const n=xs.length,pos=i=>i/(n-1)*100;
+  const cell=(i,t,top)=>{const al=i===0?'translateX(0)':i===n-1?'translateX(-100%)':'translateX(-50%)';return `<span class="vv" style="left:${pos(i)}%;${top}transform:${al}">\\(${t}\\)</span>`};
+  let arr='';
+  for(let i=0;i<n-1;i++){const g=(i===0?17:12),g2=(i+1===n-1?17:12);const x1=pos(i)+g*(100/(n-1))/50,x2=pos(i+1)-g2*(100/(n-1))/50;
+    const down=hi[i];arr+=`<line x1="${x1}%" y1="${down?36:70}%" x2="${x2}%" y2="${down?70:36}%" marker-end="url(#ah)"/>`}
+  return `<div class="tbl"><div class="vt"><div class="vh">\\(x\\)</div><div class="vz vzh">${xs.map((x,i)=>cell(i,x,'top:50%;')).join('').replace(/top:50%;transform:(translateX\([^)]*\))/g,'top:50%;transform:translateY(-50%) $1')}</div><div class="vh vl">\\(f(x)\\)</div><div class="vz vzf">${ys.map((y,i)=>cell(i,y,hi[i]?'top:6px;':'bottom:6px;')).join('')}<svg><defs><marker id="ah" markerWidth="8" markerHeight="8" refX="7" refY="4" orient="auto"><path d="M0,0 L8,4 L0,8 Z" fill="currentColor"/></marker></defs>${arr}</svg></div></div></div>`}
+
+/* ---------- exercices ---------- */
+const EX=[
+{p:'A',t:'Évolutions',
+ e:()=>R`<ol type="a"><li>Un prix passe de \(50\) € à \(63\) €. Quel est le taux d'évolution en pourcentage ?</li><li>Une quantité augmente de \(50\,\%\), puis baisse de \(20\,\%\). Quel est le taux d'évolution global ?</li><li>Après une hausse de \(20\,\%\), un article coûte \(90\) €. Quel était son prix initial ?</li><li>Quel est le taux d'évolution réciproque d'une hausse de \(60\,\%\) ?</li></ol>`,
+ c:()=>R`<h3>a)</h3><p>Taux d'évolution \(=\dfrac{\text{valeur finale}-\text{valeur initiale}}{\text{valeur initiale}}=\dfrac{63-50}{50}=\dfrac{13}{50}=0{,}26\).</p><p><span class="rep">Hausse de \(26\,\%\).</span></p>
+ <h3>b)</h3><p>Augmenter de \(t\,\%\) revient à multiplier par \(1+\frac{t}{100}\). Ici : coefficient multiplicateur global \(=1{,}5\times 0{,}8=1{,}2\).</p><p><span class="rep">Hausse globale de \(20\,\%\).</span></p>
+ <h3>c)</h3><p>Une hausse de \(20\,\%\) correspond au coefficient \(1{,}2\). Si \(P\) est le prix initial : \(P\times 1{,}2=90\), donc \(P=\dfrac{90}{1{,}2}=75\).</p><p><span class="rep">Prix initial : \(75\) €.</span></p>
+ <h3>d)</h3><p>Une hausse de \(60\,\%\) a pour coefficient \(1{,}6\). L'évolution réciproque a pour coefficient \(\dfrac{1}{1{,}6}=0{,}625\), soit \(0{,}625-1=-0{,}375\).</p><p><span class="rep">Baisse de \(37{,}5\,\%\).</span></p>`},
+{p:'A',t:'Calcul algébrique',
+ e:()=>R`<ol type="a"><li>Résoudre \((3x-9)(x+2)=0\).</li><li>Développer et réduire \((2x+5)^2\).</li><li>Factoriser \(25x^2-49\).</li><li>Pour quelles valeurs de \(x\) a-t-on \(-3x+12\geqslant 0\) ?</li></ol>`,
+ c:()=>R`<h3>a)</h3><p>Un produit est nul si et seulement si l'un de ses facteurs est nul : \(3x-9=0\) ou \(x+2=0\), donc \(x=3\) ou \(x=-2\).</p><p><span class="rep">\(S=\{-2\,;\,3\}\)</span></p>
+ <h3>b)</h3><p>On utilise \((a+b)^2=a^2+2ab+b^2\) avec \(a=2x\) et \(b=5\) :</p><p>\((2x+5)^2=(2x)^2+2\times 2x\times 5+5^2=\) <span class="rep">\(4x^2+20x+25\)</span></p>
+ <h3>c)</h3><p>On reconnaît \(a^2-b^2=(a-b)(a+b)\) avec \(a=5x\) et \(b=7\) :</p><p>\(25x^2-49=(5x)^2-7^2=\) <span class="rep">\((5x-7)(5x+7)\)</span></p>
+ <h3>d)</h3><p>\(-3x+12\geqslant 0 \iff -3x\geqslant -12\). On divise par \(-3\), qui est négatif : le sens de l'inégalité change, donc \(x\leqslant 4\).</p><p><span class="rep">\(S=]-\infty\,;\,4]\)</span></p>`},
+{p:'A',t:'Signe d\'une expression factorisée',
+ e:()=>R`<ol type="a"><li>Résoudre \((x-3)(x+2)<0\).</li><li>Résoudre \(-2(x-1)(x+5)\geqslant 0\).</li></ol>`,
+ c:()=>R`<h3>a)</h3><p>Les racines sont \(3\) et \(-2\). On dresse un tableau de signes :</p>${sign(['-2','3'],[['\\(x-3\\)',['−','−','−','0','+']],['\\(x+2\\)',['−','0','+','+','+']],['\\((x-3)(x+2)\\)',['+','0','−','0','+']]])}<p>On cherche le signe strictement négatif : <span class="rep">\(S=]-2\,;\,3[\)</span></p>
+ <h3>b)</h3><p>Les racines sont \(1\) et \(-5\). Le facteur \(-2\) est toujours négatif.</p>${sign(['-5','1'],[['\\(-2\\)',['−','−','−','−','−']],['\\(x-1\\)',['−','−','−','0','+']],['\\(x+5\\)',['−','0','+','+','+']],['produit',['−','0','+','0','−']]])}<p>On cherche le signe positif ou nul : <span class="rep">\(S=[-5\,;\,1]\)</span></p>`},
+{p:'A',t:'Lecture graphique',
+ e:()=>R`<p>On donne la courbe \(\mathscr{C}_g\) d'une fonction \(g\) définie sur \([-1\,;\,5]\).</p>${plot({id:'e4',x0:-1,x1:5,y0:-5,y1:5,u:28,curve:x=>-x*x+4*x,cx0:-1,cx1:5,lab:[4.2,-3.2,'𝒞<tspan baseline-shift="sub" font-size="9">g</tspan>'],alt:'courbe de g'})}<ol type="a"><li>Résoudre \(g(x)=3\).</li><li>Résoudre \(g(x)\geqslant 0\).</li><li>Dresser le tableau de variations de \(g\).</li></ol>`,
+ c:()=>R`<h3>a)</h3><p>On trace la droite horizontale d'équation \(y=3\). Elle coupe la courbe aux points d'abscisses \(1\) et \(3\).</p>${plot({id:'c4',x0:-1,x1:5,y0:-5,y1:5,u:28,curve:x=>-x*x+4*x,cx0:-1,cx1:5,hline:3,pts:[[1,3],[3,3]],alt:'droite y=3'})}<p><span class="rep">\(S=\{1\,;\,3\}\)</span></p>
+ <h3>b)</h3><p>\(g(x)\geqslant 0\) quand la courbe est au-dessus de l'axe des abscisses (ou le touche). Cela se produit entre \(0\) et \(4\).</p><p><span class="rep">\(S=[0\,;\,4]\)</span></p>
+ <h3>c)</h3><p>La courbe monte jusqu'au sommet de coordonnées \((2\,;\,4)\), puis descend. On lit \(g(-1)=-5\) et \(g(5)=-5\).</p>${vtable(['-1','2','5'],['-5','4','-5'],[false,true,false])}`},
+{p:'A',t:'Droites',
+ e:()=>R`<ol type="a"><li>Calculer le coefficient directeur de la droite \((AB)\) avec \(A(1\,;\,-2)\) et \(B(4\,;\,4)\).</li><li>Donner l'équation réduite de la droite de coefficient directeur \(-\frac13\) passant par \(C(0\,;\,2)\).</li><li>Tracer dans le repère ci-dessous la droite \(d\) d'équation \(y=2x-3\).</li></ol>${plot({id:'e5',x0:-3,x1:4,y0:-4,y1:4,u:28,alt:'repère vide'})}`,
+ c:()=>R`<h3>a)</h3><p>Le coefficient directeur est \(m=\dfrac{y_B-y_A}{x_B-x_A}=\dfrac{4-(-2)}{4-1}=\dfrac{6}{3}=2\).</p><p><span class="rep">\(m=2\)</span></p>
+ <h3>b)</h3><p>L'équation réduite est \(y=mx+p\) avec \(m=-\frac13\). Le point \(C(0\,;\,2)\) est sur l'axe des ordonnées, donc \(p=2\).</p><p><span class="rep">\(y=-\dfrac13x+2\)</span></p>
+ <h3>c)</h3><p>Deux points suffisent pour tracer une droite. Si \(x=0\), alors \(y=-3\). Si \(x=2\), alors \(y=1\). On place \((0\,;\,-3)\) et \((2\,;\,1)\) puis on trace la droite qui passe par ces deux points.</p>${plot({id:'c5',x0:-3,x1:4,y0:-4,y1:4,u:28,line:[2,-3],pts:[[0,-3],[2,1]],alt:'droite y=2x-3'})}`},
+{p:'A',t:'Statistiques',
+ e:()=>R`<p>Voici les notes de huit élèves à un devoir :</p><p style="text-align:center">\(3\ ;\ 5\ ;\ 8\ ;\ 9\ ;\ 12\ ;\ 12\ ;\ 14\ ;\ 17\)</p><ol type="a"><li>Calculer la moyenne et la médiane.</li><li>Déterminer les quartiles \(Q_1\) et \(Q_3\).</li><li>Calculer l'étendue.</li></ol>`,
+ c:()=>R`<h3>a)</h3><p>Moyenne \(=\dfrac{3+5+8+9+12+12+14+17}{8}=\dfrac{80}{8}=10\).</p><p>Il y a \(8\) valeurs, rangées dans l'ordre croissant. La médiane est la moyenne des \(4^{\text e}\) et \(5^{\text e}\) valeurs : \(\dfrac{9+12}{2}=10{,}5\).</p><p><span class="rep">Moyenne \(10\), médiane \(10{,}5\).</span></p>
+ <h3>b)</h3><p>\(8\times 0{,}25=2\) : \(Q_1\) est la \(2^{\text e}\) valeur, soit \(5\). \(8\times 0{,}75=6\) : \(Q_3\) est la \(6^{\text e}\) valeur, soit \(12\).</p><p><span class="rep">\(Q_1=5\) et \(Q_3=12\)</span></p>
+ <h3>c)</h3><p>Étendue \(=\) plus grande valeur \(-\) plus petite valeur \(=17-3=14\).</p><p><span class="rep">Étendue \(14\)</span></p>`},
+{p:'B',t:'Équations et inéquations',
+ e:()=>R`<p>Résoudre dans \(\mathbb{R}\) :</p><ol type="a"><li>\(3x^2-4x-4=0\)</li><li>\(x^2-8x+16\leqslant 0\)</li><li>\(-x^2+2x-3<0\)</li></ol>`,
+ c:()=>R`<h3>a)</h3><p>\(\Delta=b^2-4ac=(-4)^2-4\times 3\times(-4)=16+48=64>0\) : deux solutions.</p><p>\(x_1=\dfrac{4-8}{6}=-\dfrac23\) et \(x_2=\dfrac{4+8}{6}=2\).</p><p><span class="rep">\(S=\left\{-\dfrac23\,;\,2\right\}\)</span></p>
+ <h3>b)</h3><p>On reconnaît une identité remarquable : \(x^2-8x+16=(x-4)^2\). Un carré est toujours positif ou nul, donc \((x-4)^2\leqslant 0\) seulement quand \((x-4)^2=0\), c'est-à-dire \(x=4\).</p><p><span class="rep">\(S=\{4\}\)</span></p>
+ <h3>c)</h3><p>\(\Delta=2^2-4\times(-1)\times(-3)=4-12=-8<0\) : pas de racine. Le coefficient de \(x^2\) est \(-1<0\), donc le trinôme est toujours strictement négatif.</p><p><span class="rep">\(S=\mathbb{R}\)</span></p>`},
+{p:'B',t:'Bénéfice',
+ e:()=>R`<p>Une boulangerie vend \(q\) dizaines de gâteaux par jour (\(0\leqslant q\leqslant 12\)). Son bénéfice journalier, en dizaines d'euros, est \(B(q)=-2q^2+24q-54\).</p><ol><li>Montrer que \(B(q)=-2(q-6)^2+18\).</li><li>En déduire le nombre de gâteaux à vendre pour que le bénéfice soit maximal, et la valeur de ce bénéfice.</li><li>Entre quelles quantités le bénéfice est-il positif ou nul ?</li></ol>`,
+ c:()=>R`<h3>1)</h3><p>On développe : \(-2(q-6)^2+18=-2(q^2-12q+36)+18=-2q^2+24q-72+18=-2q^2+24q-54=B(q)\).</p>
+ <h3>2)</h3><p>Un carré est positif ou nul : \((q-6)^2\geqslant 0\), donc \(-2(q-6)^2\leqslant 0\) et \(B(q)\leqslant 18\). L'égalité a lieu quand \(q=6\).</p><p><span class="rep">Maximum de \(18\) (dizaines d'euros) pour \(q=6\)</span> : il faut vendre \(60\) gâteaux, pour un bénéfice de \(180\) €.</p>
+ <h3>3)</h3><p>\(B(q)\geqslant 0\iff -2(q-6)^2+18\geqslant 0\iff (q-6)^2\leqslant 9\iff -3\leqslant q-6\leqslant 3\iff 3\leqslant q\leqslant 9\).</p><p><span class="rep">Bénéfice positif ou nul pour \(q\in[3\,;\,9]\)</span>, soit entre \(30\) et \(90\) gâteaux.</p>`},
+{p:'B',t:'Équations bicarrées',star:1,
+ e:()=>R`<ol><li>Résoudre dans \(\mathbb{R}\) l'équation \(x^4-2x^2-24=0\) (on pourra poser \(X=x^2\)).</li><li>Résoudre dans \(\mathbb{R}\) l'inéquation \(x^4-8x^2+7\leqslant 0\).</li></ol>`,
+ c:()=>R`<h3>1)</h3><p>On pose \(X=x^2\). L'équation devient \(X^2-2X-24=0\).</p><p>\(\Delta=(-2)^2-4\times 1\times(-24)=4+96=100\), donc \(X_1=\dfrac{2-10}{2}=-4\) et \(X_2=\dfrac{2+10}{2}=6\).</p><p>\(x^2=-4\) est impossible, car un carré est positif. \(x^2=6\) donne \(x=\sqrt6\) ou \(x=-\sqrt6\).</p><p><span class="rep">\(S=\{-\sqrt6\,;\,\sqrt6\}\)</span></p>
+ <h3>2)</h3><p>Avec \(X=x^2\) : \(X^2-8X+7\leqslant 0\). \(\Delta=64-28=36\), donc \(X_1=\dfrac{8-6}{2}=1\) et \(X_2=\dfrac{8+6}{2}=7\).</p><p>Le trinôme (coefficient dominant positif) est négatif entre les racines : \(1\leqslant X\leqslant 7\), soit \(1\leqslant x^2\leqslant 7\).</p><p>\(x^2\geqslant 1\) donne \(x\leqslant -1\) ou \(x\geqslant 1\). \(x^2\leqslant 7\) donne \(-\sqrt7\leqslant x\leqslant\sqrt7\).</p><p><span class="rep">\(S=[-\sqrt7\,;\,-1]\cup[1\,;\,\sqrt7]\)</span></p>`},
+{p:'B',t:'Équation à paramètre',star:1,
+ e:()=>R`<p>Soit \(m\) un réel. On considère l'équation \((E_m)\) : \(x^2+2mx+2m+3=0\).</p><ol><li>Montrer que le discriminant de \((E_m)\) est \(\Delta=4(m-3)(m+1)\).</li><li>Pour quelles valeurs de \(m\) l'équation admet-elle deux solutions distinctes ?</li><li>Pour quelles valeurs de \(m\) admet-elle une unique solution ? La calculer dans chaque cas.</li><li>Pour quelles valeurs de \(m\) n'admet-elle aucune solution ?</li></ol>`,
+ c:()=>R`<h3>1)</h3><p>Ici \(a=1\), \(b=2m\), \(c=2m+3\). \(\Delta=(2m)^2-4(2m+3)=4m^2-8m-12=4(m^2-2m-3)\).</p><p>Pour factoriser \(m^2-2m-3\) : \(\Delta'=4+12=16\), racines \(\dfrac{2-4}{2}=-1\) et \(\dfrac{2+4}{2}=3\). Donc \(m^2-2m-3=(m-3)(m+1)\).</p><p><span class="rep">\(\Delta=4(m-3)(m+1)\)</span></p>
+ <h3>2)</h3><p>\(\Delta>0\iff(m-3)(m+1)>0\). Le trinôme \((m-3)(m+1)\) est positif à l'extérieur de ses racines \(-1\) et \(3\).</p><p><span class="rep">\(m\in]-\infty\,;\,-1[\,\cup\,]3\,;\,+\infty[\)</span></p>
+ <h3>3)</h3><p>\(\Delta=0\iff m=-1\) ou \(m=3\). La solution unique est \(-\dfrac{b}{2a}=-m\).</p><p>Si \(m=-1\) : \(x^2-2x+1=(x-1)^2=0\), donc \(x=1\). Si \(m=3\) : \(x^2+6x+9=(x+3)^2=0\), donc \(x=-3\).</p>
+ <h3>4)</h3><p>\(\Delta<0\iff(m-3)(m+1)<0\), c'est-à-dire entre les racines.</p><p><span class="rep">\(m\in]-1\,;\,3[\)</span></p>`},
+{p:'B',t:'Équations et inéquation ramenées au second degré',star:1,
+ e:()=>R`<ol><li>Résoudre dans \(\mathbb{R}^*\) l'équation \(x-\dfrac{10}{x}=3\).</li><li>Résoudre dans \(\mathbb{R}^*\) l'équation \(x+\dfrac1x=\dfrac{10}{3}\).</li><li>Résoudre dans \(\mathbb{R}\) l'inéquation \(\dfrac{x^2-2x-8}{x^2-9}\leqslant 0\) (on précisera d'abord l'ensemble de définition).</li></ol>`,
+ c:()=>R`<h3>1)</h3><p>Pour \(x\neq0\), on multiplie par \(x\) : \(x^2-10=3x\), soit \(x^2-3x-10=0\).</p><p>\(\Delta=9+40=49\), \(x_1=\dfrac{3-7}{2}=-2\) et \(x_2=\dfrac{3+7}{2}=5\). Ces deux valeurs sont non nulles.</p><p><span class="rep">\(S=\{-2\,;\,5\}\)</span></p>
+ <h3>2)</h3><p>Pour \(x\neq0\), on multiplie par \(3x\) : \(3x^2+3=10x\), soit \(3x^2-10x+3=0\).</p><p>\(\Delta=100-36=64\), \(x_1=\dfrac{10-8}{6}=\dfrac13\) et \(x_2=\dfrac{10+8}{6}=3\).</p><p><span class="rep">\(S=\left\{\dfrac13\,;\,3\right\}\)</span></p>
+ <h3>3)</h3><p>Le quotient existe si \(x^2-9\neq0\), donc \(x\neq-3\) et \(x\neq3\).</p><p>Numérateur : \(\Delta=4+32=36\), racines \(\dfrac{2-6}{2}=-2\) et \(\dfrac{2+6}{2}=4\), donc \(x^2-2x-8=(x+2)(x-4)\). Dénominateur : \(x^2-9=(x-3)(x+3)\).</p>${sign(['-3','-2','3','4'],[['\\(x+2\\)',['−','−','−','0','+','+','+','+','+']],['\\(x-4\\)',['−','−','−','−','−','−','−','0','+']],['\\(x-3\\)',['−','−','−','−','−','0','+','+','+']],['\\(x+3\\)',['−','0','+','+','+','+','+','+','+']],['quotient',['+','‖','−','0','+','‖','−','0','+']]])}<p>On cherche les valeurs où le quotient est négatif ou nul, en excluant \(-3\) et \(3\) :</p><p><span class="rep">\(S=]-3\,;\,-2]\cup]3\,;\,4]\)</span></p>`},
+{p:'C',t:'Avec le cosinus',
+ e:()=>R`<ol type="a"><li>\(ABC\) est un triangle tel que \(AB=7\), \(AC=4\) et \(\widehat{BAC}=\frac{\pi}{3}\). Calculer \(\overrightarrow{AB}\cdot\overrightarrow{AC}\).</li><li>\(ABC\) est un triangle tel que \(AB=6\), \(AC=2\) et \(\widehat{BAC}=\frac{5\pi}{6}\). Calculer \(\overrightarrow{AB}\cdot\overrightarrow{AC}\).</li><li>\(ABC\) est un triangle tel que \(CA=6\), \(CB=2\) et \(\overrightarrow{CA}\cdot\overrightarrow{CB}=-6\). Calculer \(\cos(\widehat{ACB})\), puis en déduire une mesure de l'angle \(\widehat{ACB}\) en radian.</li></ol>`,
+ c:()=>R`<p>Formule : \(\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AC\times\cos(\widehat{BAC})\).</p><h3>a)</h3><p>\(\overrightarrow{AB}\cdot\overrightarrow{AC}=7\times4\times\cos\dfrac{\pi}{3}=28\times\dfrac12=\) <span class="rep">\(14\)</span></p>
+ <h3>b)</h3><p>\(\overrightarrow{AB}\cdot\overrightarrow{AC}=6\times2\times\cos\dfrac{5\pi}{6}=12\times\left(-\dfrac{\sqrt3}{2}\right)=\) <span class="rep">\(-6\sqrt3\)</span></p>
+ <h3>c)</h3><p>On isole le cosinus : \(\cos(\widehat{ACB})=\dfrac{\overrightarrow{CA}\cdot\overrightarrow{CB}}{CA\times CB}=\dfrac{-6}{6\times2}=-\dfrac12\).</p><p>L'angle de \([0\,;\,\pi]\) dont le cosinus vaut \(-\frac12\) est \(\dfrac{2\pi}{3}\).</p><p><span class="rep">\(\widehat{ACB}=\dfrac{2\pi}{3}\)</span></p>`},
+{p:'C',t:'Triangle équilatéral',
+ e:()=>R`<p>\(ABC\) est un triangle équilatéral de côté \(4\) et \(I\) est le milieu de \([BC]\).</p>${geo({alt:'triangle équilatéral',s:46,pts:{B:[0,0,-12,4],C:[4,0,12,4],A:[2,3.464,0,-10],I:[2,0,0,18]},segs:[['A','B'],['B','C'],['C','A'],['A','I','d']]})}<p>Calculer : a) \(\overrightarrow{AB}\cdot\overrightarrow{AC}\)&emsp; b) \(\overrightarrow{AB}\cdot\overrightarrow{BC}\)&emsp; c) \(\overrightarrow{AI}\cdot\overrightarrow{BC}\)&emsp; d) \(\overrightarrow{AB}\cdot\overrightarrow{AI}\)</p>`,
+ c:()=>R`<h3>a)</h3><p>L'angle \(\widehat{BAC}\) mesure \(60^\circ\) : \(\overrightarrow{AB}\cdot\overrightarrow{AC}=4\times4\times\cos60^\circ=16\times\dfrac12=\) <span class="rep">\(8\)</span></p>
+ <h3>b)</h3><p>\(\overrightarrow{AB}=-\overrightarrow{BA}\), donc \(\overrightarrow{AB}\cdot\overrightarrow{BC}=-\overrightarrow{BA}\cdot\overrightarrow{BC}=-\left(4\times4\times\cos60^\circ\right)=\) <span class="rep">\(-8\)</span></p>
+ <h3>c)</h3><p>Dans un triangle équilatéral, la médiane \((AI)\) est aussi une hauteur : \((AI)\perp(BC)\). Deux vecteurs orthogonaux ont un produit scalaire nul : <span class="rep">\(\overrightarrow{AI}\cdot\overrightarrow{BC}=0\)</span></p>
+ <h3>d)</h3><p>Le projeté orthogonal de \(B\) sur \((AI)\) est \(I\). Donc \(\overrightarrow{AB}\cdot\overrightarrow{AI}=\overrightarrow{AI}\cdot\overrightarrow{AI}=AI^2\).</p><p>Dans le triangle \(AIB\) rectangle en \(I\) : \(AI^2=AB^2-BI^2=16-4=12\).</p><p><span class="rep">\(\overrightarrow{AB}\cdot\overrightarrow{AI}=12\)</span></p>`},
+{p:'C',t:'Projetés orthogonaux',
+ e:()=>R`<p>\(ABCD\) est un trapèze rectangle en \(A\) et en \(D\) tel que \(AB=7\), \(DC=5\) et \(AD=3\).</p>${geo({alt:'trapèze rectangle',s:36,pts:{A:[0,0,-10,14],B:[7,0,10,14],C:[5,3,10,-6],D:[0,3,-10,-6]},segs:[['A','B'],['B','C'],['C','D'],['D','A']],ra:[['A','B','D'],['D','A','C']]})}<p>En utilisant des projetés orthogonaux, calculer : a) \(\overrightarrow{AB}\cdot\overrightarrow{AD}\)&emsp; b) \(\overrightarrow{AB}\cdot\overrightarrow{AC}\)&emsp; c) \(\overrightarrow{BA}\cdot\overrightarrow{BC}\)&emsp; d) \(\overrightarrow{DB}\cdot\overrightarrow{DC}\)</p>`,
+ c:()=>R`<p>Méthode : \(\overrightarrow{OU}\cdot\overrightarrow{OV}=\pm\,OU\times OH\), où \(H\) est le projeté orthogonal de \(V\) sur \((OU)\). Le signe est \(+\) si \(\overrightarrow{OU}\) et \(\overrightarrow{OH}\) ont le même sens, \(-\) sinon.</p>${geo({alt:'projetés orthogonaux',s:36,pts:{A:[0,0,-10,14],B:[7,0,10,14],C:[5,3,10,-6],D:[0,3,-10,-6],E:[5,0,0,16],F:[7,3,12,-6]},segs:[['A','B'],['B','C'],['C','D'],['D','A'],['C','E','d'],['B','F','d'],['C','F','d']],ra:[['A','B','D'],['D','A','C']]})}
+ <h3>a)</h3><p>\((AB)\perp(AD)\), donc <span class="rep">\(\overrightarrow{AB}\cdot\overrightarrow{AD}=0\)</span>.</p>
+ <h3>b)</h3><p>Le projeté orthogonal de \(C\) sur \((AB)\) est le point \(E\) tel que \(AE=DC=5\). \(\overrightarrow{AB}\) et \(\overrightarrow{AE}\) ont le même sens : \(\overrightarrow{AB}\cdot\overrightarrow{AC}=AB\times AE=7\times5=\) <span class="rep">\(35\)</span></p>
+ <h3>c)</h3><p>Le projeté de \(C\) sur \((BA)\) est encore \(E\). \(BE=AB-AE=7-5=2\), et \(\overrightarrow{BA}\), \(\overrightarrow{BE}\) ont le même sens : \(\overrightarrow{BA}\cdot\overrightarrow{BC}=7\times2=\) <span class="rep">\(14\)</span></p>
+ <h3>d)</h3><p>Le projeté de \(B\) sur \((DC)\) est le point \(F\) tel que \(DF=AB=7\), situé au-delà de \(C\). \(\overrightarrow{DC}\) et \(\overrightarrow{DF}\) ont le même sens : \(\overrightarrow{DB}\cdot\overrightarrow{DC}=DC\times DF=5\times7=\) <span class="rep">\(35\)</span></p>`},
+{p:'C',t:'Avec les coordonnées',
+ e:()=>R`<p>Dans un repère orthonormé, on donne \(A(0\,;\,1)\), \(B(5\,;\,2)\) et \(C(3\,;\,5)\).</p><ol><li>Calculer les coordonnées des vecteurs \(\overrightarrow{AB}\) et \(\overrightarrow{AC}\).</li><li>En déduire \(\overrightarrow{AB}\cdot\overrightarrow{AC}\).</li><li>Calculer les distances \(AB\) et \(AC\).</li><li>En déduire une mesure de l'angle \(\widehat{BAC}\) au dixième de degré près.</li></ol>`,
+ c:()=>R`<h3>1)</h3><p>\(\overrightarrow{AB}\begin{pmatrix}5-0\\2-1\end{pmatrix}=\begin{pmatrix}5\\1\end{pmatrix}\) et \(\overrightarrow{AC}\begin{pmatrix}3-0\\5-1\end{pmatrix}=\begin{pmatrix}3\\4\end{pmatrix}\).</p>
+ <h3>2)</h3><p>Dans un repère orthonormé : \(\overrightarrow{AB}\cdot\overrightarrow{AC}=xx'+yy'=5\times3+1\times4=19\).</p>
+ <h3>3)</h3><p>\(AB=\sqrt{5^2+1^2}=\sqrt{26}\) et \(AC=\sqrt{3^2+4^2}=\sqrt{25}=5\).</p>
+ <h3>4)</h3><p>\(\cos(\widehat{BAC})=\dfrac{\overrightarrow{AB}\cdot\overrightarrow{AC}}{AB\times AC}=\dfrac{19}{5\sqrt{26}}\approx0{,}7453\). À la calculatrice : \(\widehat{BAC}=\arccos(0{,}7453)\).</p><p><span class="rep">\(\widehat{BAC}\approx41{,}8^\circ\)</span></p>`},
+{p:'C',t:'Orthogonalité',
+ e:()=>R`<p>Dans un repère orthonormé :</p><ol><li>Déterminer \(t\) pour que \(\vec u\begin{pmatrix}t\\4\end{pmatrix}\) et \(\vec v\begin{pmatrix}3\\t-2\end{pmatrix}\) soient orthogonaux.</li><li>Déterminer les réels \(t\) pour que \(\vec u\begin{pmatrix}t\\3\end{pmatrix}\) et \(\vec v\begin{pmatrix}t+2\\-1\end{pmatrix}\) soient orthogonaux.</li><li>On donne \(A(-2\,;\,1)\) et \(B(2\,;\,4)\). Déterminer le point \(C\) de l'axe des abscisses tel que les droites \((AB)\) et \((AC)\) soient perpendiculaires.</li></ol>`,
+ c:()=>R`<p>Deux vecteurs sont orthogonaux si et seulement si leur produit scalaire est nul.</p><h3>1)</h3><p>\(\vec u\cdot\vec v=3t+4(t-2)=7t-8=0\iff t=\dfrac87\).</p><p><span class="rep">\(t=\dfrac87\)</span></p>
+ <h3>2)</h3><p>\(\vec u\cdot\vec v=t(t+2)+3\times(-1)=t^2+2t-3=0\). \(\Delta=4+12=16\), donc \(t=\dfrac{-2-4}{2}=-3\) ou \(t=\dfrac{-2+4}{2}=1\).</p><p><span class="rep">\(t=-3\) ou \(t=1\)</span></p>
+ <h3>3)</h3><p>\(C\) est sur l'axe des abscisses : \(C(c\,;\,0)\). \(\overrightarrow{AB}\begin{pmatrix}4\\3\end{pmatrix}\) et \(\overrightarrow{AC}\begin{pmatrix}c+2\\-1\end{pmatrix}\).</p><p>\(\overrightarrow{AB}\cdot\overrightarrow{AC}=4(c+2)-3=4c+5=0\iff c=-\dfrac54\).</p><p><span class="rep">\(C\left(-\dfrac54\,;\,0\right)\)</span></p>`},
+{p:'C',t:'Triangle rectangle ?',
+ e:()=>R`<p>Dans un repère orthonormé, on donne \(A(2\,;\,1)\), \(B(5\,;\,3)\) et \(C(0\,;\,4)\).</p><ol><li>Montrer que le triangle \(ABC\) est rectangle en \(A\).</li><li>Calculer \(AB\) et \(AC\). Que peut-on dire du triangle \(ABC\) ?</li><li>Calculer \(\overrightarrow{BA}\cdot\overrightarrow{BC}\) et en déduire la mesure de l'angle \(\widehat{ABC}\).</li><li>Calculer l'aire du triangle \(ABC\).</li></ol>`,
+ c:()=>R`<h3>1)</h3><p>\(\overrightarrow{AB}\begin{pmatrix}3\\2\end{pmatrix}\) et \(\overrightarrow{AC}\begin{pmatrix}-2\\3\end{pmatrix}\). \(\overrightarrow{AB}\cdot\overrightarrow{AC}=3\times(-2)+2\times3=0\).</p><p><span class="rep">Les vecteurs sont orthogonaux : \(ABC\) est rectangle en \(A\).</span></p>
+ <h3>2)</h3><p>\(AB=\sqrt{9+4}=\sqrt{13}\) et \(AC=\sqrt{4+9}=\sqrt{13}\).</p><p><span class="rep">\(ABC\) est rectangle isocèle en \(A\).</span></p>
+ <h3>3)</h3><p>\(\overrightarrow{BA}\begin{pmatrix}-3\\-2\end{pmatrix}\), \(\overrightarrow{BC}\begin{pmatrix}-5\\1\end{pmatrix}\), donc \(\overrightarrow{BA}\cdot\overrightarrow{BC}=15-2=13\).</p><p>\(BA=\sqrt{13}\) et \(BC=\sqrt{25+1}=\sqrt{26}\). \(\cos(\widehat{ABC})=\dfrac{13}{\sqrt{13}\times\sqrt{26}}=\dfrac{13}{13\sqrt2}=\dfrac{\sqrt2}{2}\).</p><p><span class="rep">\(\widehat{ABC}=45^\circ\)</span> (ce qui confirme que le triangle est rectangle isocèle).</p>
+ <h3>4)</h3><p>Aire \(=\dfrac12\times AB\times AC=\dfrac12\times\sqrt{13}\times\sqrt{13}=\) <span class="rep">\(\dfrac{13}{2}\)</span></p>`},
+{p:'C',t:'Hauteur d\'un triangle',star:1,
+ e:()=>R`<p>Dans un repère orthonormé, on donne \(A(0\,;\,1)\), \(B(1\,;\,6)\) et \(C(4\,;\,5)\). On note \(H\) le projeté orthogonal de \(B\) sur la droite \((AC)\).</p><ol><li>Calculer \(\overrightarrow{AB}\cdot\overrightarrow{AC}\) et la distance \(AC\).</li><li>En déduire la distance \(AH\) (on justifiera que \(H\) appartient à la demi-droite \([AC)\)).</li><li>En déduire la distance \(BH\).</li><li>Calculer l'aire du triangle \(ABC\).</li></ol>`,
+ c:()=>R`<h3>1)</h3><p>\(\overrightarrow{AB}\begin{pmatrix}1\\5\end{pmatrix}\) et \(\overrightarrow{AC}\begin{pmatrix}4\\4\end{pmatrix}\). \(\overrightarrow{AB}\cdot\overrightarrow{AC}=4+20=24\). \(AC=\sqrt{16+16}=4\sqrt2\).</p>
+ <h3>2)</h3><p>Comme \(H\) est le projeté orthogonal de \(B\) sur \((AC)\) : \(\overrightarrow{AB}\cdot\overrightarrow{AC}=\overrightarrow{AH}\cdot\overrightarrow{AC}\). Ce produit est positif, donc \(\overrightarrow{AH}\) et \(\overrightarrow{AC}\) ont le même sens : \(H\in[AC)\) et \(AH\times AC=24\).</p><p>\(AH=\dfrac{24}{4\sqrt2}=\dfrac{6}{\sqrt2}=3\sqrt2\).</p><p><span class="rep">\(AH=3\sqrt2\)</span></p>
+ <h3>3)</h3><p>\(AB^2=1^2+5^2=26\). Dans le triangle \(ABH\) rectangle en \(H\) : \(BH^2=AB^2-AH^2=26-18=8\).</p><p><span class="rep">\(BH=2\sqrt2\)</span></p>
+ <h3>4)</h3><p>Aire \(=\dfrac12\times AC\times BH=\dfrac12\times4\sqrt2\times2\sqrt2=\) <span class="rep">\(8\)</span></p>`}
+];
+
+/* ---------- affichage ---------- */
+const nav=document.getElementById('nav'),main=document.getElementById('main');
+const PARTS=[['A','Automatismes'],['B','Second degré'],['C','Produit scalaire']];
+let cur=0;
+function build(){
+  nav.innerHTML='';
+  PARTS.forEach(([k,name])=>{
+    const row=document.createElement('div');row.className='part';
+    row.innerHTML='<span class="lab"><b>'+k+'</b>'+name+'</span>';
+    EX.forEach((e,i)=>{if(e.p!==k)return;
+      const b=document.createElement('button');b.className='num';b.type='button';b.textContent=i+1;b.id='n'+(i+1);
+      b.setAttribute('aria-label','Exercice '+(i+1));b.addEventListener('click',()=>go(i+1,true));row.appendChild(b)});
+    nav.appendChild(row);
+  });
+}
+function typeset(el){
+  const run=()=>window.MathJax&&MathJax.typesetPromise?MathJax.typesetPromise([el]).catch(()=>{}):setTimeout(run,150);
+  run();
+}
+function go(n,fromClick){
+  if(n<1||n>EX.length)n=1;cur=n;
+  const e=EX[n-1];
+  main.innerHTML=`<article class="exo" id="ex${n}"><div class="ttl">Exercice ${n}${e.star?' ★':''}<small>exercice similaire · ${e.t}</small></div>
+    <div class="enonce">${e.e()}</div>
+    <details id="d${n}"><summary>Voir la correction détaillée</summary><div class="corr">${e.c()}</div></details>
+    <div class="step"><button type="button" id="prev"${n===1?' disabled':''}>← Exercice ${n-1||''}</button><button type="button" id="next"${n===EX.length?' disabled':''}>Exercice ${n+1>EX.length?'':n+1} →</button></div></article>`;
+  document.getElementById('prev').onclick=()=>go(n-1,true);document.getElementById('next').onclick=()=>go(n+1,true);
+  document.querySelectorAll('.num').forEach(b=>b.setAttribute('aria-current',b.id==='n'+n?'true':'false'));
+  try{if(location.hash!=='#ex'+n)history.replaceState(null,'','#ex'+n)}catch(_){}
+  typeset(main);
+  if(fromClick)window.scrollTo({top:nav.getBoundingClientRect().top+scrollY-8});
+  document.getElementById('d'+n).addEventListener('toggle',()=>typeset(main));
+}
+function fromHash(){const m=/^#ex(\d+)$/.exec(location.hash||'');go(m?+m[1]:1,false)}
+build();fromHash();addEventListener('hashchange',fromHash);
+</script>
